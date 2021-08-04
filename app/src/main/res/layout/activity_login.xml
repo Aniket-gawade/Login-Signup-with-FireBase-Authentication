@@ -65,11 +65,13 @@
             android:text="Forgot Password?"
             android:textColor="@color/primaryTextColor"
             android:textSize="@dimen/newsMoreTextSize" />x
+
         <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
             android:id="@+id/cirLoginButton"
             style="@style/loginButton"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
+            android:onClick="Clicked"
             android:text="Login"
             app:initialCornerAngle="27dp"
             app:spinning_bar_color="#FFF"

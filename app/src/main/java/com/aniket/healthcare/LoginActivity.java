@@ -15,6 +15,14 @@ public class LoginActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_login);
     }
+
+//    Intent x = new Intent(this, RegisterActivity.class);
+
+    public void Clicked(View View){
+        Intent i = new Intent(this, DashBoard.class);
+        startActivity(i);
+    }
+
     public void onLoginClick(View View){
         startActivity(new Intent(this,RegisterActivity.class));
         overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
