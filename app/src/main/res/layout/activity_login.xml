@@ -59,28 +59,29 @@
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
         <TextView
+            android:id="@+id/forgot"
             style="@style/viewParent"
             android:layout_gravity="end"
             android:layout_marginTop="10dp"
             android:text="Forgot Password?"
             android:textColor="@color/primaryTextColor"
-            android:textSize="@dimen/newsMoreTextSize" />x
+            android:textSize="@dimen/newsMoreTextSize" />
 
         <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
             android:id="@+id/cirLoginButton"
             style="@style/loginButton"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:onClick="Clicked"
             android:text="Login"
             app:initialCornerAngle="27dp"
             app:spinning_bar_color="#FFF"
             app:spinning_bar_padding="6dp"
             app:spinning_bar_width="4dp" />
+
         <TextView
+            android:id="@+id/New_User"
             style="@style/parent"
             android:layout_marginTop="@dimen/loginViewsMargin"
-            android:onClick="onLoginClick"
             android:text="New user? Register Now"
             android:textAlignment="center"
             android:textColor="@color/themeColor"
@@ -116,11 +117,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center">
+
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_facebook" />
-            <ImageView
+                android:id="@+id/GsignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -135,13 +134,14 @@ android:layout_alignParentTop="true"
 android:layout_alignParentRight="true"
 android:layout_marginTop="20dp"
 android:background="@drawable/ic_side_bg" />
-<ImageView
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_alignParentRight="true"
-android:layout_alignParentBottom="true"
-android:layout_marginRight="11dp"
-android:layout_marginBottom="30dp"
-android:onClick="onLoginClick"
-android:src="@drawable/ic_add_img" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="onLoginClick"
+        android:src="@drawable/ic_add_img" />
     </RelativeLayout>
