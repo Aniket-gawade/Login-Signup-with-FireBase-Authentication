@@ -80,6 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if( mFirebaseUser != null ){
 //                    Toast.makeText(LoginActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
+                    password.requestFocus();
+                    emailId.requestFocus();
                     Intent i = new Intent(LoginActivity.this, DashBoard.class);
                     startActivity(i);
                 }
@@ -118,6 +120,8 @@ public class LoginActivity extends AppCompatActivity {
                                 pd.dismiss();
                             }
                             else{
+                                password.getText().clear();
+                                emailId.getText().clear();
                                 Intent intToHome = new Intent(LoginActivity.this,DashBoard.class);
                                 startActivity(intToHome);
                                 pd.dismiss();
