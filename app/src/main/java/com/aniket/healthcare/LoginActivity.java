@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -78,16 +80,17 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-                if( mFirebaseUser != null ){
-//                    Toast.makeText(LoginActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
-                    password.requestFocus();
-                    emailId.requestFocus();
-                    Intent i = new Intent(LoginActivity.this, DashBoard.class);
-                    startActivity(i);
-                }
-                else{
-//                    Toast.makeText(LoginActivity.this,"Please Login",Toast.LENGTH_SHORT).show();
-                }
+//                if( mFirebaseUser != null ){
+////                    Toast.makeText(LoginActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
+////                    password.requestFocus();
+////                    emailId.requestFocus();
+//                    Intent i = new Intent(LoginActivity.this, DashBoard.class);
+//                    startActivity(i);
+//                    finish();
+//                }
+//                else{
+////                    Toast.makeText(LoginActivity.this,"Please Login",Toast.LENGTH_SHORT).show();
+//                }
             }
         };
 
@@ -111,7 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this,"Fields Are Empty!",Toast.LENGTH_SHORT).show();
                     pd.dismiss();
                 }
-                else  if(!(email.isEmpty() && pwd.isEmpty())){
+                else  if(isValidEmail(email)){
                     mFirebaseAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -124,13 +127,15 @@ public class LoginActivity extends AppCompatActivity {
                                 emailId.getText().clear();
                                 Intent intToHome = new Intent(LoginActivity.this,DashBoard.class);
                                 startActivity(intToHome);
+                                finish();
                                 pd.dismiss();
                             }
                         }
                     });
                 }
                 else{
-                    Toast.makeText(LoginActivity.this,"Error Occurred!",Toast.LENGTH_SHORT).show();
+                    emailId.setError("Please Check Your Email Id");
+                    emailId.requestFocus();
                     pd.dismiss();
 
                 }
@@ -192,13 +197,13 @@ public class LoginActivity extends AppCompatActivity {
     
 
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
-//        FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
-//        updateUI(currentUser);
-//    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+        FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
 
 
     private void signIn(){
@@ -284,8 +289,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser fUser){
 
-            Intent intToHome = new Intent(LoginActivity.this,DashBoard.class);
+        if(fUser != null) {
+            Intent intToHome = new Intent(LoginActivity.this, DashBoard.class);
             startActivity(intToHome);
+            finish();
+        }
 
     }
 
@@ -300,5 +308,9 @@ public class LoginActivity extends AppCompatActivity {
     public void onLoginClick(View View){
         startActivity(new Intent(this,RegisterActivity.class));
         overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+    }
+
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
 }

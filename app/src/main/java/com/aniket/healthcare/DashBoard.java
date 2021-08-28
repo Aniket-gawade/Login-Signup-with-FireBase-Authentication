@@ -43,6 +43,7 @@ public class DashBoard extends AppCompatActivity {
                 GoogleSignInClient googleSignInClient= GoogleSignIn.getClient(DashBoard.this,gso);
                 googleSignInClient.signOut();
                 FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(DashBoard.this,LoginActivity.class));
                 finish();
             }
         });

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,11 +38,7 @@ public class ForgotPassword extends AppCompatActivity {
             public void onClick(View v) {
                 String mail = emailId.getText().toString();
 
-                if(mail.isEmpty()){
-                    emailId.setError("Please enter email id");
-                    emailId.requestFocus();
-                }
-                else{
+                if(isValidEmail(mail)){
                     mFirebaseAuth.sendPasswordResetEmail(mail)
                             .addOnCompleteListener(new OnCompleteListener<Void>(){
                                 @Override
@@ -55,6 +53,10 @@ public class ForgotPassword extends AppCompatActivity {
                                     }
                                 }
                             });
+                }
+                else{
+                    emailId.setError("Please check email id");
+                    emailId.requestFocus();
                 }
             }
         });
@@ -72,5 +74,9 @@ public class ForgotPassword extends AppCompatActivity {
     public void onLoginClick(View view){
         startActivity(new Intent(this,LoginActivity.class));
         overridePendingTransition(R.anim.slide_in_left,android.R.anim.slide_out_right);
+    }
+
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
 }
