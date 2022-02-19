@@ -3,11 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_camera.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_community_category.xml" value="0.264" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_cyclone.xml" value="0.4" />
         <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_dash_board.xml" value="0.264" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_doctor_category.xml" value="0.22864583333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_earthquake.xml" value="0.4" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_flood.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_forgot_password.xml" value="0.264" />
-        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_login.xml" value="0.259375" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_login_dr.xml" value="0.264" />
         <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_maps.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_sos.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/activity_tips.xml" value="0.264" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/app_bar_main.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/content_main.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/layout_aid.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/layout_emergency.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/layout_home.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/layout_map.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/layout/nav_header_main.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/aniket/AndroidStudioProjects/HealthCare/app/src/main/res/menu/activity_main_drawer.xml" value="0.4" />
       </map>
     </option>
   </component>

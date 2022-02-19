@@ -176,6 +176,7 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <View
         android:layout_width="11dp"
         android:layout_height="match_parent"

@@ -1,28 +1,27 @@
 package com.aniket.healthcare;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class DashBoard extends AppCompatActivity {
 
     //This changes is available at update_1 branch
 
     Button signout;
+    TextView camera, doctor;
+    CardView tips, doctor1;
     FirebaseAuth mFirebaseAuth;
     GoogleApiClient mGoogleApiClient;
 
@@ -32,6 +31,10 @@ public class DashBoard extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
 
         signout = findViewById(R.id.cirLogOutButton);
+        camera = findViewById(R.id.camera);
+        doctor = findViewById(R.id.user_doctor);
+        tips = findViewById(R.id.btn_tips);
+        doctor1 = findViewById(R.id.user_doctor1);
 
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,5 +50,22 @@ public class DashBoard extends AppCompatActivity {
                 finish();
             }
         });
+
+        tips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(DashBoard.this,Tips.class));
+                finish();
+            }
+        });
+
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DashBoard.this, Tips.class));
+            }
+        });
+
     }
 }

@@ -24,16 +24,22 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 style="@style/viewParent.headerText.NoMode"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:text="Already \nhave an \nAccount?" />
+
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="185dp"
+                android:layout_height="182dp"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginRight="-1dp"
                 android:src="@drawable/ic_register_hero" />
         </RelativeLayout>
         <com.google.android.material.textfield.TextInputLayout

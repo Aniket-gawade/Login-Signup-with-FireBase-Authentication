@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "tag";
     EditText emailId, password;
     Button btnSignIn;
-    TextView tvSignUp, forgotPass;
+    TextView tvSignUp, forgotPass, drLogin;
     ImageView gsign, fbSign;
     FirebaseAuth mFirebaseAuth;
     ProgressDialog pd;
@@ -125,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
                             else{
                                 password.getText().clear();
                                 emailId.getText().clear();
-                                Intent intToHome = new Intent(LoginActivity.this,DashBoard.class);
+                                Intent intToHome = new Intent(LoginActivity.this,MainActivity.class);
                                 startActivity(intToHome);
                                 finish();
                                 pd.dismiss();
@@ -160,6 +160,7 @@ public class LoginActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
             }
         });
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("278944410326-rfro3ljl2b2ff2iodhqrgv5khqd4gqk6.apps.googleusercontent.com")
@@ -290,7 +291,7 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUI(FirebaseUser fUser){
 
         if(fUser != null) {
-            Intent intToHome = new Intent(LoginActivity.this, DashBoard.class);
+            Intent intToHome = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intToHome);
             finish();
         }
